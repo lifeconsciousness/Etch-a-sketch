@@ -1,0 +1,50 @@
+:root{
+    --bg-color: rgb(59, 55, 81);
+    --white-main: rgb(234, 225, 225);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--white-main);
+    font-size: 1.7rem;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1.4fr 1.3fr 0.1fr;
+    grid-template-areas: "menu tiles";
+    height: 100vh;
+}
+
+#tiles-container{
+    display: grid;
+    grid-area: tiles;
+
+    width: 800px; 
+    height: 800px;
+    margin-top: 1rem;
+    background-color:var(--white-main);
+}
+
+.cell{
+    border: solid 0.3px;
+    user-select: none;
+    background-color: var(--white-main);
+    border: 1px solid rgba(0, 0, 0, 0.389);
+}
+
+.cell:hover{
+   background-color: rgba(0, 0, 0, 0.107);
+}
+
+.menu{
+    grid-area: menu;
+    padding: 5rem;
+    padding-top: 1rem;
+}
+
+#slider{
+    width: 322px;
+}
