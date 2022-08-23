@@ -2,7 +2,7 @@ const grid = document.querySelector('#tiles-container');
 const cell = document.querySelector('.cell');
 const btnClear = document.querySelector('#clearTiles');
 const colorPick = document.querySelector('#colorPick');
-
+const eraser = document.getElementById("eraser");
 
 let rangeSlider = document.querySelector('#slider');
 rangeSlider.value = 16;
@@ -14,8 +14,6 @@ rangeSlider.oninput = function(){
     sliderValue = Math.floor(Math.sqrt(this.value));
     //clearGrid();
     createGrid(sliderValue);
-    
-    
 }
 
 btnClear.addEventListener('click', function(){
@@ -43,20 +41,24 @@ function createGrid(size){
         tile.classList.add('grid');
         tile.classList.add('cell');
 
-        tile.addEventListener('click', changeColor)
+        //tile.addEventListener('mousedown', changeColor);
+        tile.addEventListener('mousedown', (e)=>{
+            console.log('ete')
+            if(eraser.checked){
+                e.target.style.backgroundColor = "rgb(234, 225, 225)"
+            }
+            else{
+                currentColor = colorPick.value;
+                e.target.style.backgroundColor = currentColor;
+            }
+        });
+
         //adds it to the page so you can see it
         grid.appendChild(tile);
     }
 }
 
-function changeColor(i){
-    let currentColor = colorPick.value;
-    i.target.style.backgroundColor = currentColor;
-}
-
-
-
-
+let currentColor;
 
 
 

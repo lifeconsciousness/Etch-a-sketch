@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a sketch</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- 
+        Todo list:
+        make click hold
+        make eraser
+        make several color pickers
+        make webpage responsive
+        make rainbow mode
+        make better css
+     -->
 </head>
 <body>
     <h1 style="padding-left: 5rem; color: white; font-size: 2rem;">Etch a sketch by lifecon</h1>
@@ -15,11 +25,13 @@
 
             <div class="menu">
                 <div class="rangeSlider">
-                    <input type="range" min="16" max="1024" value="16" class="mySlider" id="slider" name="labelname">
+                    <input type="range" min="16" max="4096" value="16" class="mySlider" id="slider" name="labelname">
                 </div>
                 <p>Tiles: <span id="sliderValue"></span></p>
                 <input type="color" id="colorPick">
                 <button id="clearTiles">Clear</button>
+                <p style="display: inline;">Eraser:</p>
+                <input type="checkbox" name="eraser" id="eraser">
             </div>
     </div>
    
